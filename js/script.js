@@ -49,6 +49,8 @@ cats.forEach(element => {
 
 
 //------------------milestone 2--------------------------------- 
+
+//creo due array 
 let catsMale = cats.filter((object) => {
     return object.sesso == 'male';
 });
@@ -56,6 +58,8 @@ let catsMale = cats.filter((object) => {
 let catsFemale = cats.filter((object) => {
     return object.sesso == 'female';
 });
+
+
 
 
 // //versione con un solo filter
@@ -75,3 +79,14 @@ let catsFemale = cats.filter((object) => {
 
 console.log(catsMale);
 console.log(catsFemale);
+catsMale.forEach((element) => {
+    const {nome , sesso} = element;
+    document.getElementById("male").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `;
+});
+catsFemale.forEach((element) => {
+    const {nome , sesso} = element;
+    document.getElementById("female").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `;
+});
+// document.getElementById("male").innerHTML += `<li> ${} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `
+
+/* <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> */
