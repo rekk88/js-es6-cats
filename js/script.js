@@ -80,12 +80,12 @@ let catsFemale = cats.filter((object) => {
 console.log(catsMale);
 console.log(catsFemale);
 catsMale.forEach((element) => {
-    const {nome , sesso} = element;
-    document.getElementById("male").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `;
+    const {nome , sesso , eta} = element;
+    document.getElementById("male").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; opacity:${eta + 30}%;font-size: 30px" class="fas fa-ribbon"></i> </li> `;
 });
 catsFemale.forEach((element) => {
-    const {nome , sesso} = element;
-    document.getElementById("female").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `;
+    const {nome , sesso, eta} = element;
+    document.getElementById("female").innerHTML += `<li> ${nome} , ${sesso} <i style="color: pink; opacity:${eta + 30}%;font-size: 30px" class="fas fa-ribbon"></i> </li> `;
 });
 // document.getElementById("male").innerHTML += `<li> ${} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `
 
