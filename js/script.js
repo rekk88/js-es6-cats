@@ -89,15 +89,45 @@ console.log(catsFemale);
 catsMale.forEach((element) => {
     const {nome , sesso , eta} = element;
     opacity = (100 * eta) / catsMale[1].eta;  // gattopiuvecchio : 100 = gattocheanalizzo : x  => x = (100 * gattocheanalizzo) / gattopiuvecchio
+    element.opacity = opacity;
     // console.log(opacity);
     document.getElementById("male").innerHTML += `<li> ${nome} , ${sesso} <i style="color: blue; opacity:${opacity}%;font-size: 30px" class="fas fa-ribbon"></i> </li> `;
 });
 catsFemale.forEach((element) => {
     const {nome , sesso, eta} = element;
     opacity = (100 * eta) / catsFemale[2].eta;
+    element.opacity = opacity; //aggiungo la propietà opacity 
     console.log(opacity);
     document.getElementById("female").innerHTML += `<li> ${nome} , ${sesso} <i style="color: pink; opacity:${opacity}%;font-size: 30px" class="fas fa-ribbon"></i> </li> `;
 });
+// console.log(catsFemale);
+
 // document.getElementById("male").innerHTML += `<li> ${} <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> </li> `
 
 /* <i style="color: blue; height: 50px" class="fas fa-ribbon"></i> */
+
+
+// Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, inserendo solamente nome, colore e opacità del fiocco per
+//  ogni gatto.
+//array di gatti
+
+const MalesFemales = [];
+//push catsFemale in MalesFemales
+catsFemale.forEach((element) => {
+    const {nome , colore , opacity} = element;
+    MalesFemales.push(element);
+});
+//push catsMale in MalesFemales
+catsMale.forEach((element) => {
+    const {nome , colore , opacity} = element;
+    MalesFemales.push(element);
+});
+
+console.log(MalesFemales);
+
+//stampa a schermo di MalesFemales
+MalesFemales.forEach((element) =>{
+    const {nome , colore , opacity} = element;
+    document.getElementById("male-female").innerHTML += `<li> ${nome} , <i style="color: ${colore}; opacity:${opacity}%;font-size: 30px" class="fas fa-ribbon"></i> </li> `;
+
+});
